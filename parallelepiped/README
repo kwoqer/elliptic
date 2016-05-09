@@ -1,0 +1,49 @@
+Name
+	parallelepiped
+
+
+Purpose
+	Computes the minimum volume parallelepiped enclosing a
+	given set of three-dimensional points.
+
+
+Reference paper
+	Minimal enclosing parallelepiped in 3D, by Frédéric Vivien and
+	Nicolas Wicker, research report LIP 2002-49 and INRIA 4685,
+	December 2002. To appear in Computational Geometry: Theory and
+	Applications.
+
+
+Program dependence
+	This library relies on the qconvex program of the qhull
+	library for the computation of the convex hull of the set of
+	points (along as some characteristics of this convex hull).
+
+	The qhull library is available from:
+        <http://www.geom.umn.edu/software/qhull>
+	<http://savannah.gnu.org/projects/qhull>
+	<http://www.thesa.com/software/qhull>
+
+	The qconvex program is called by a system call in the library,
+	the arguments beging exchange through files. This is rather
+	ugly. But he allowed us to be as less qhull version dependent
+	as possible.
+
+
+Compilation
+	The library should compile and run out of the box. To run the
+	test program or any program using this library, the path to
+	the qconvex program should be in your PATH environment
+	variable (whatever its name and syntax is).
+
+	The test_parallelepiped program shows an example of use of the
+	library.
+
+
+Known to work
+	This program was tested with g++ 2.95.4, 3.0.4, and 3.3.1 on
+	Linux 2.4.
+
+
+Comments and bugs
+	Frederic.Vivien@ens-lyon.fr
